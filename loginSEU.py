@@ -33,7 +33,3 @@ def login(sess, uname, pwd):
         print("LOGIN SUCCESS!")
     else:
         print("LOGIN FAIL!")
-
-
-sess = requests.session()
-login(sess, '213172883', 'Seu674932')
