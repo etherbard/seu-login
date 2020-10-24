@@ -1,4 +1,4 @@
-# loginSEU
+# Python爬虫实战：东南大学统一身份认证
 ## 1.手动登陆，观察网页信息
 通过Chrome手动登陆，按F12观察Network信息
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201024133258798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzAyMjI1MQ==,size_16,color_FFFFFF,t_70#pic_center)
