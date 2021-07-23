@@ -1,6 +1,7 @@
 import requests
 import re
 import execjs
+import sys
 
 
 def login(sess, uname, pwd):
@@ -29,7 +30,19 @@ def login(sess, uname, pwd):
                      'rmShown': '1'}
     post_login = sess.post(login_post_url, personal_info)
     post_login.encoding = 'utf-8'
-    if re.search("校园信息门户", post_login.text):
-        print("LOGIN SUCCESS!")
+    if re.search("信息", post_login.text):
+        print("SUCCESS!")
     else:
-        print("LOGIN FAIL!")
+        print("FAILED!")
+
+
+def main():
+    username = sys.argv[1]
+    password = sys.argv[2]
+    sess = requests.session()
+    login(sess, username, password)
+    sess.close()
+
+
+if __name__ == '__main__':
+    main()
