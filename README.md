@@ -36,4 +36,4 @@
 ## 3. 编写爬虫
 
 爬虫使用requests、re、execjs和三个库。首先通过requests.session()建立会话并请求登陆页面，从登陆页面提取pwdDefaultEncryptSalt、execution等字段，再调用encrypt.js获得加密后的password参数。最后用得到的参数构造POST表单并发送传递给服务器即可成功登陆。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201024133648613.png#pic_center)
+![image-20210723221316631](seu-login.assets/image-20210723221316631.png)
