@@ -12,6 +12,7 @@
 通过login信息可以知道向服务器request的方式是POST，发送信息的URL是https://newids.seu.edu.cn/authserver/login?goto=http://my.seu.edu.cn/index.portal
 
 ![image-20210723214430798](seu-login.assets/image-20210723214430798.png)
+
 进一步观察可以看到Post表单的格式和数据，username的值为一卡通号，password的值是一卡通密码在浏览器端通过JavaScript加密得到的数据。经过多次实验发现，dllt、_eventId、rmShown等字段的值均为固定值，而lt和execution的值会发生变换。因此，现在的任务是找出lt、execution和password的加密方式。
 
 ## 2. 搜索网页代码寻找线索
@@ -31,7 +32,7 @@
 ![image-20210723215738560](seu-login.assets/image-20210723215738560.png)
 
 
-至此，POST表单的所以秘密已经解开了，只需将密码和从网页代码中提取的pwdDefaultEncryptSalt作为参数调用这个js的encryptAES函数即可得到加密后的密码。
+至此，POST表单的秘密已经解开了，只需将密码和从网页代码中提取的pwdDefaultEncryptSalt作为参数调用这个js的encryptAES函数即可得到加密后的密码。
 
 ## 3. 编写爬虫
 
